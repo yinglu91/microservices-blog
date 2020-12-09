@@ -81,6 +81,14 @@ spec:
 # Listening on 4002
 # Processing event: PostCreated
 
+# $ kubectl logs -n dev-01 moderation-depl-64fff49bc7-9lb26
+
+# > moderation@1.0.0 serve
+# > node index.js
+
+# Listening on 4003
+# Received Event PostCreated
+
 # extra k8s commands:
 # $ kubectl get pods -n dev-01
 # $ kubectl exec -it posts-depl-654f97d596-s2zw8 -n dev-01 -- sh
