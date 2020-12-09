@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-srv
+  namespace: dev-01
+spec:
+  type: NodePort
+  selector:
+    app: posts
+  ports:
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
+
+# $ kubectl get services -n dev-01
+# NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+# posts-srv             NodePort    10.108.22.248    <none>        4000:32087/TCP   30s
+# in chrome http://localhost:32087/posts

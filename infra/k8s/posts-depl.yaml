@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts-depl
+  namespace: dev-01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: posts
+  template:
+    metadata:
+      labels:
+        app: posts
+    spec:
+      containers:
+        - name: posts
+          image: yinglu91/m-posts:1.0
+---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: posts-clusterip-srv
+#   namespace: dev-01
+# spec:
+#   selector:
+#     app: posts
+#   ports:
+#     - name: posts
+#       protocol: TCP
+#       port: 4000
+#       targetPort: 4000
+# $ kubectl get pods -n dev-01
+# $ kubectl exec -it posts-depl-654f97d596-s2zw8 -n dev-01 -- sh
+# $ kubectl logs posts-depl-654f97d596-s2zw8 -n dev-01
+# $ kubectl describe -n dev-01 pod  posts-depl-654f97d596-s2zw8
+# $ kubectl delete pod posts-depl-654f97d596-s2zw8 -n dev-01
+
+# $ kubectl get services -n dev-01
