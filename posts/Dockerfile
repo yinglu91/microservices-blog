@@ -11,6 +11,8 @@ CMD ["npm", "run", "serve"]
 # setup default command to run the container
 
 # $ docker build -t yinglu91/m-posts:1.0 .
+# $ docker push yinglu91/m-posts:1.0
+
 # docker run -p 4000:4000 -d yinglu91/m-posts:1.0
 # in chrome: http://localhost:4000/posts
 

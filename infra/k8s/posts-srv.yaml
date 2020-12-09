@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: posts-srv
+  name: posts-node-port-srv
   namespace: dev-01
 spec:
   type: NodePort
@@ -15,5 +15,40 @@ spec:
 
 # $ kubectl get services -n dev-01
 # NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-# posts-srv             NodePort    10.108.22.248    <none>        4000:32087/TCP   30s
+# posts-node-port-srv   NodePort    10.108.22.248    <none>        4000:32087/TCP   30s
 # in chrome http://localhost:32087/posts
+
+# YLu@USLT20149 MINGW64 /c/e-books/stephen/microservices/infra/k8s (master)
+# $ kubectl get services -n dev-01
+# NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+# event-bus-srv         ClusterIP   10.109.5.61      <none>        4005/TCP         2m9s
+# posts-node-port-srv   NodePort    10.109.16.29     <none>        4000:32080/TCP   12s
+# posts-srv             ClusterIP   10.107.139.225   <none>        4000/TCP         2m22s
+
+# YLu@USLT20149 MINGW64 /c/e-books/stephen/microservices/infra/k8s (master)
+# $ kubectl get pods -n dev-01
+# NAME                              READY   STATUS    RESTARTS   AGE
+# event-bus-depl-797879c68d-mknqs   1/1     Running   0          5m4s
+# posts-depl-654f97d596-h5xzs       1/1     Running   0          5m17s
+ 
+# in postman
+# post localhost:32080/posts
+# body:
+# {
+#     "title": "post123"
+# }
+# response:
+# {
+#     "id": "f51fc02c",
+#     "title": "post123"
+# }
+
+# YLu@USLT20149 MINGW64 /c/e-books/stephen/microservices/infra/k8s (master)
+# $ kubectl logs -n dev-01 posts-depl-654f97d596-h5xzs
+
+# > posts@1.0.0 serve
+# > node index.js
+
+# Listening on 4000
+# Received Event PostCreated
+# -- great!!
