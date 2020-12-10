@@ -2,6 +2,9 @@
 
 FROM node:alpine AS builder
 
+# Add the following line 
+#ENV CI=true
+
 WORKDIR /app
 
 COPY package.json ./
@@ -29,6 +32,8 @@ EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 # $ docker build -t yinglu91/m-client:1.0 .
+# $ docker push yinglu91/m-client:1.0
+
 # docker run -p 8080:80 -d yinglu91/m-client:1.0
 # in chrome: http://localhost:8080/
 # $curl -i localhost:8080
