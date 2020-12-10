@@ -30,3 +30,5 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
+
+#infra/k8s/client-depl.yaml

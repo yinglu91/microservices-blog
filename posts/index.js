@@ -14,7 +14,7 @@ app.get('/posts', (req, res) => {
   res.send(posts);
 });
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
@@ -45,3 +45,25 @@ app.listen(4000, () => {
 });
 
 // in chrome: http://localhost:4000/posts
+
+// finish k8s, in postman
+// localhost:30580/posts/create
+
+// body:
+// {
+//   "title": "post123"
+// }
+// response:
+// {
+//   "id": "2bf8210e",
+//   "title": "post123"
+// }
+
+// GET http://posts.com/posts
+// {
+//   "2bf8210e": {
+//       "id": "2bf8210e",
+//       "title": "post123",
+//       "comments": []
+//   }
+// }

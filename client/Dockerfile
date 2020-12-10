@@ -3,7 +3,7 @@
 FROM node:alpine AS builder
 
 # Add the following line 
-#ENV CI=true
+ENV CI=true
 
 WORKDIR /app
 

@@ -30,3 +30,5 @@ spec:
       protocol: TCP
       port: 4002
       targetPort: 4002
+
+#infra/k8s/query-depl.yaml

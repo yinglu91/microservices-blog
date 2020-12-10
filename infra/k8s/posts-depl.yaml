@@ -31,6 +31,8 @@ spec:
       port: 4000
       targetPort: 4000
 
+#infra/k8s/posts-depl.yaml
+
 # kubectl delete ns dev-01    ---- at the beginning
 # kubectl create ns dev-01
 # $ kubectl apply -f .

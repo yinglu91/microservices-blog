@@ -13,6 +13,8 @@ spec:
       port: 4000
       targetPort: 4000
 
+#infra/k8s/posts-NodePort-srv.yaml
+
 # $ kubectl get services -n dev-01
 # NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
 # posts-node-port-srv   NodePort    10.108.22.248    <none>        4000:32087/TCP   30s
