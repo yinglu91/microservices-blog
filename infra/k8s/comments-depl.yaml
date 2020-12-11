@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: yinglu91/m-comments:1.0
+          image: yinglu91/m-comments
 ---
 apiVersion: v1
 kind: Service

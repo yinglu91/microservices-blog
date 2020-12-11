@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: yinglu91/m-posts:1.0
+          image: yinglu91/m-posts
 ---
 apiVersion: v1
 kind: Service
@@ -30,7 +30,6 @@ spec:
       protocol: TCP
       port: 4000
       targetPort: 4000
-
 #infra/k8s/posts-depl.yaml
 
 # kubectl delete ns dev-01    ---- at the beginning
@@ -55,7 +54,7 @@ spec:
 # posts-srv             ClusterIP   10.107.139.225   <none>        4000/TCP         27m
 # query-srv             ClusterIP   10.100.141.174   <none>        4002/TCP         99s
 
-# if image changes e.g. event-bus one, 
+# if image changes e.g. event-bus one,
 # $ kubectl rollout restart deployment event-bus-depl -n dev-01
 # deployment.apps/event-bus-depl restarted
 

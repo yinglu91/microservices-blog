@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: yinglu91/m-moderation:1.0
+          image: yinglu91/m-moderation
 ---
 apiVersion: v1
 kind: Service
@@ -30,5 +30,4 @@ spec:
       protocol: TCP
       port: 4003
       targetPort: 4003
-
 #infra/k8s/moderation-depl.yaml

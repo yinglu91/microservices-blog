@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: yinglu91/m-client:1.0
+          image: yinglu91/m-client
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +29,5 @@ spec:
     - name: client
       protocol: TCP
       port: 80
-      targetPort: 80
-
+      targetPort: 3000
 #infra/k8s/client-depl.yaml

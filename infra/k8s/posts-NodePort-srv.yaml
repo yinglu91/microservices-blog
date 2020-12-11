@@ -12,7 +12,6 @@ spec:
       protocol: TCP
       port: 4000
       targetPort: 4000
-
 #infra/k8s/posts-NodePort-srv.yaml
 
 # $ kubectl get services -n dev-01
@@ -32,7 +31,7 @@ spec:
 # NAME                              READY   STATUS    RESTARTS   AGE
 # event-bus-depl-797879c68d-mknqs   1/1     Running   0          5m4s
 # posts-depl-654f97d596-h5xzs       1/1     Running   0          5m17s
- 
+
 # in postman
 # post localhost:32080/posts
 # body:
@@ -53,4 +52,13 @@ spec:
 
 # Listening on 4000
 # Received Event PostCreated
-# -- great!!
+
+# skaffold:
+
+# https://storage.googleapis.com/skaffold/releases/latest/skaffold-windows-amd64.exe
+# remane it skaffold.exe
+
+# docker run gcr.io/k8s-skaffold/skaffold:latest skaffold init
+
+# skaffold init
+# skaffold dev   --- later only need to run this one in project root directory
