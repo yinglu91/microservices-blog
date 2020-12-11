@@ -10,6 +10,8 @@ CMD ["npm", "run", "serve"]
 
 # setup default command to run the container
 
+# evebt-bus/Dockerfile
+
 # $ docker build -t yinglu91/m-event-bus:1.0 .
 # $ docker push yinglu91/m-event-bus:1.0
 

@@ -10,6 +10,8 @@ CMD ["npm", "run", "serve"]
 
 # setup default command to run the container
 
+# posts/Dockerfile
+
 # $ docker build -t yinglu91/m-posts:1.0 .
 # $ docker push yinglu91/m-posts:1.0
 

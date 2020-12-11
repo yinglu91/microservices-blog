@@ -28,3 +28,10 @@ spec:
               serviceName: client-srv
               servicePort: 80
 #infra/k8s/ingress-srv.yaml
+
+#post http://posts.com/posts/create  - create a post
+#get http://posts.com/posts  - get posts
+#post http://posts.com/posts/1asdfsdf9/comments  - create a comment
+
+#http://posts.com   -- react frontend
+

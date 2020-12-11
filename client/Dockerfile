@@ -31,6 +31,8 @@ EXPOSE 80
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
+# client/Dockerfile
+
 # $ docker build -t yinglu91/m-client:1.0 .
 # $ docker push yinglu91/m-client:1.0
 
