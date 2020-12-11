@@ -29,9 +29,14 @@ spec:
               servicePort: 80
 #infra/k8s/ingress-srv.yaml
 
-#post http://posts.com/posts/create  - create a post
-#get http://posts.com/posts  - get posts
-#post http://posts.com/posts/1asdfsdf9/comments  - create a comment
+# 1. get react frontend
+# GET http://posts.com  - client-srv 80
 
-#http://posts.com   -- react frontend
+# 2. create a post
+# POST http://posts.com/posts/create   -- posts-srv 4000
 
+# 3. get posts
+# GET http://posts.com/posts   - query-srv 4002
+
+# 4. create a comment on a post
+# POST http://posts.com/posts/b77d818f/comments  - comments-srv 4001
