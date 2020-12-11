@@ -6,7 +6,7 @@ RUN npm install
 COPY ./ ./
 
 EXPOSE 4005
-CMD ["npm", "run", "serve"]
+CMD ["npm", "start"]
 
 # setup default command to run the container
 
